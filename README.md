@@ -35,12 +35,12 @@ Each student has to submit his/her own work. Plagiarism (抄襲) will be treated
 Late submission will receive ZERO marks
  
 
-Also, each student must observe and follow the additional requirements of this EA as shown below :
-a.	Your website will be installed at the teacher's computer and only the Chrome web browser will be used for testing. You may choose to run your website using the Live Preview function of the Brackets editor.
-b.	Set the filename of the "start page" to index.html. Organize the files into different folders (usually by file type or purpose).
-c.	All filenames must be meaningful (avoid to use Chinese filename), pay attention to long and meaningless image filenames. Similarly, all function names, variable names, class names, id names etc. should also be meaningful.
-d.	Code indentation must be done for all program code. (Use Beautify extension)
-e.	Add sufficient understandable comments in your (HTML, CSS and Javascript) code to explain the purpose of each logical block of code. Here are some examples of bad/useless comments :
+Also, each student must observe and follow the additional requirements of this EA as shown below :<br />
+a.	Your website will be installed at the teacher's computer and only the Chrome web browser will be used for testing. You may choose to run your website using the Live Preview function of the Brackets editor.<br />
+b.	Set the filename of the "start page" to index.html. Organize the files into different folders (usually by file type or purpose).<br />
+c.	All filenames must be meaningful (avoid to use Chinese filename), pay attention to long and meaningless image filenames. Similarly, all function names, variable names, class names, id names etc. should also be meaningful.<br />
+d.	Code indentation must be done for all program code. (Use Beautify extension)<br />
+e.	Add sufficient understandable comments in your (HTML, CSS and Javascript) code to explain the purpose of each logical block of code. Here are some examples of bad/useless comments :<br />
 
 width : 100%;   /* set the width to 100% */
 // It will perform 10 times
