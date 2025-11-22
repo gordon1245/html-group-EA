@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <title>Questionnaire</title>
   <script>
     function print_result() {
       var name = document.f1.name.value;
-      alert("Name: " + name);
+
       var gender = document.f1.gender.value;
-      alert("gender: " + gender);
+
       var age = document.f1.age.value;
-      alert("Age: " + age);
+
       var email = document.f1.email.value;
-      alert("Email: " + email);
+
       var question = [];
       var questioncheckbox = document.getElementsByName("question");
       for (var i = 0; i < questioncheckbox.length; i++) {
@@ -21,8 +22,12 @@
         }
         var userquestion = document.f1.userquestion.value;
       }
-      alert("Type of information interested in: " + question)
       var userquestion = document.f1.userquestion.value;
+      alert("Name: " + name);
+      alert("gender: " + gender);
+      alert("Age: " + age);
+      alert("Email: " + email);
+      alert("Type of information interested in: " + question);
       alert("Question: " + userquestion);
     }
   </script>
@@ -145,4 +150,5 @@
       <input type="submit" value="Submit" />
     </form>
 </body>
+
 </html>
