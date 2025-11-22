@@ -11,16 +11,14 @@
         function print_result() {
             var name = document.f1.name.value;
             alert("Name = " + name);
+            var gender = document.f1.gender.value;
+            alert("gender = " + gender);
             var age = document.f1.age.value;
             alert("age = " + age);
             var url = document.f1.url.value;
             alert("url = " + url);
             var time = document.f1.time.value;
             alert("time = " + time);
-            var color = document.f1.color.value;
-            alert("color = " + color);
-            var gender = document.f1.gender.value;
-            alert("gender = " + gender);
             var dse = [];
             var dsecheckbox = document.getElementsByName("dse");
             for (var i = 0; i < dsecheckbox.length; i++) {
@@ -46,43 +44,7 @@
             <tr>
                 <td>Name</td>
                 <td>
-                    <!-- (a) -->
                     <input type="text" name="name" pattern="^[A-Z].*" title="Capital first character" required />
-                </td>
-            </tr>
-
-            <tr>
-                <td>Age</td>
-                <td>
-                    <!-- (b) -->
-                    <input type="number" name="age" min="18" required />
-                </td>
-            </tr>
-
-            <tr>
-                <td>Website Address</td>
-                <td>
-                    <!-- (c) -->
-                    <input type="url" name="url" title="http://domainName" required pattern="https?://.+\..+" />
-                </td>
-            </tr>
-
-            <tr>
-                <td>Wake up Time</td>
-                <td>
-                    <!-- (d) -->
-                    <input type="text" title="HH:MM:SS" name="time" pattern="([01]?\d|2[0-3]):[0-5][0-9]:[0-5][0-9]"
-                        required />
-                </td>
-            </tr>
-
-            <tr>
-                <td>Favorite color in color code</td>
-                <td>
-                    <!-- (e) -->
-                    <input type="text" title="#hhh or #hhhhhh" name="color" pattern="#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})"
-                        required />
-
                 </td>
             </tr>
 
@@ -91,31 +53,32 @@
                 <td>
                     <input type="radio" name="gender" value="M" required="required" />Male
                     <input type="radio" name="gender" value="F" />Female
+                    <input type="radio" name="gender" value="NA" />Prefer not to say
                 </td>
             </tr>
 
             <tr>
-                <td>DSE Subjects</td>
+                <td>Age</td>
                 <td>
-                    <input type="checkbox" name="dse" value="eng" />English Language
-                    <input type="checkbox" name="dse" value="chi" />Chinese Language
-                    <input type="checkbox" name="dse" value="math" />Mathematics
-                    <br />
-                    <input type="checkbox" name="dse" value="geo" />Geography
-                    <input type="checkbox" name="dse" value="csci" />Combined Science
+                    <input type="number" name="age" min="18" required />
                 </td>
             </tr>
 
             <tr>
-                <td>Favorite Sports</td>
+                <td>Email</td>
                 <td>
-                    <select name="sport">
-                        <option value="">Please select one sport</option>
-                        <option value="fb">Football</option>
-                        <option value="sw">Swimming</option>
-                        <option value="jg">Jogging</option>
-                        <option value="cy">Cycling</option>
-                    </select>
+                    <input type="url" name="url" title="http://domainName" required pattern="https?://.+\..+" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Type of information interested in</td>
+                <td>
+                    <input type="checkbox" name="question" value="food" />Food
+                    <input type="checkbox" name="question" value="TA" />Tourist attractions
+                    <input type="checkbox" name="question" value="pts" />Place to stay
+                    <input type="checkbox" name="question" value="TI" />Travel insurance
+                    <input type="checkbox" name="question" value="Itinerary" />Itinerary
                 </td>
             </tr>
         </table>
@@ -125,5 +88,4 @@
     </form>
 
 </body>
-
 </html>
