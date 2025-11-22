@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Join US</title>
+  <script>
+    function print_result() {
+      var name = document.question.name.value;
+      var gender = document.question.gender.value;
+      var age = document.question.age.value;
+      var email = document.question.email.value;
+      var question = [];
+      var questioncheckbox = document.getElementsByName("question");
+      for (var i = 0; i < questioncheckbox.length; i++) {
+        if (questioncheckbox[i].checked) {
+          question.push(questioncheckbox[i].value);
+        }
+      }
+      var userquestion = document.question.userquestion.value;
+
+      alert(
+        "Name: " + name +
+        "\nGender: " + gender +
+        "\nAge: " + age +
+        "\nEmail:" + email +
+        "\nType of information interested in:\n" + question.join(" ,") +
+        "\nQuestion:\n" + userquestion
+      );
+
+    }
+  </script>
+  <style type="text/css">
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    fieldset {
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    td,
+    input,
+    textarea,
+    legend,
+    label {
+      font-size: 1.3rem;
+    }
+
+    button {
+      position: absolute;
+      top: 70px;
+      left: 150px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 1200px;
+    }
+  </style>
+</head>
+
+<body style="background-color: #f9f9f9;">
+  <button onclick="window.location.href='index.html'">Back</button>
+  <header>
+    <h1></h1>
+    <p>
+      Please fill out the questionnaire below so that we can serve you better.<br>
+      We will reply to your questions with email as soon as possible.
+    <p>
+    <form name="question" onSubmit="print_result()">
+
+      <fieldset>
+        <legend>
+          <h2>Personal Details</h2>
+        </legend>
+        <table>
+          <tr>
+            <td>Name</td>
+            <td>
+              <input type="text" name="name" pattern="^[A-Z].*" title="Capital first character" required />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gender" value="M" required="required" />Male
+              <input type="radio" name="gender" value="F" />Female
+              <input type="radio" name="gender" value="NA" />Prefer not to say
+            </td>
+          </tr>
+
+          <tr>
+            <td>Age</td>
+            <td>
+              <input type="number" name="age" min="18" required />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Email</td>
+            <td>
+              <input type="email" name="email" title="Please enter a valid Email" required
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+</body>
+
+</html>
