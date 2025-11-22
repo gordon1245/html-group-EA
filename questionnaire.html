@@ -18,7 +18,7 @@
         }
       }
       var userquestion = document.question.userquestion.value;
-      
+
       alert(
         "Name: " + name +
         "\nGender: " + gender +
@@ -64,6 +64,18 @@
       font-size: 1.3rem;
     }
 
+    button {
+      position: absolute;
+      top: 70px;
+      left: 150px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
     form {
       background-color: #f0f0f0;
@@ -76,17 +88,7 @@
 </head>
 
 <body style="background-color: #f9f9f9;">
-  <button onclick="window.location.href='index.html'" style="
-  position: absolute;
-  top: 70px;
-  left: 150px;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;">Back</button>
+  <button onclick="window.location.href='index.html'">Back</button>
   <header>
     <h1>Questionnaire</h1>
     <p>
