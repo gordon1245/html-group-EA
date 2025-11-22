@@ -1,154 +1,197 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Japan Travel Club</title>
+    <meta charset="UTF-8">
+    <title>Join Us - Japan Travel Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --primary: #007BFF;
+            --accent: #28a745;
+            --bg: #f9f9f9;
+            --text: #222;
+            --muted: #666;
+            --border: #ddd;
+        }
 
-    <style type="text/css">
+        * { box-sizing: border-box; }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 20px;
-            padding-top: 200px;
-            max-width: 1500px;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .backbutton {
-            position: absolute;
-            top: 70px;
-            left: 150px;
-            padding: 10px 20px;
-            background-color: #0064FF;
-            color: white;
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin: 0 0 8px;
+        }
+
+        header p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 16px;
+            padding: 10px 16px;
+            background-color: var(--primary);
+            color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 16px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         fieldset {
-            border-radius: 10px;
-            border: 1px solid lightgray;
-            background-color: lightgray;
-            width: 1500px;
-            height: 1500px;
-        }
-
-        .text {
-            text-align: center;
-            margin: 0 auto;
-            width: 1100px;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        p {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            margin: 10px auto;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: #0064ff;
-            line-height: 1.5;
-            text-align: center;
-        }
-
-        .points {
-            text-align: left;
-            font-size: 1rem;
-            color: black;
-            padding-left: 200px;
-        }
-
-        li {
-            line-height: 0;
-            font-size: 1.5rem;
-            color: black;
-            line-height: 1.5;
-        }
-
-
-        .joinbutton {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #0064FF;
-            color: white;
-            border: none;
+            border: 1px solid var(--border);
             border-radius: 8px;
-            cursor: pointer;
-            font-size: 24px;
-            /* Bigger text */
-            padding: 16px 40px;
-            /* More space inside */
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+
+        legend {
+            padding: 0 8px;
             font-weight: bold;
-            /* Make text stand out */
+            color: var(--primary);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 6px;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-secondary { background: #e9ecef; color: #000; }
+
+        .note {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body>
-    <button class="backbutton" onclick="window.location.href='index.html'">Back</button>
-    <fieldset>
-        <h1>🌸Welcome to the Japan Travel Club!🌸</h1><br>
-        <div class="text">
-            <p>
-                Konnichiwa, fellow travelers and Japan enthusiasts!
-                We are the <strong>Japan Travel Club</strong>—a vibrant community of adventurers, culture lovers, and
-                dreamers united by
-                our
-                shared passion for exploring the Land of the Rising Sun. Whether you're planning your first trip to
-                Japan or
-                you're a seasoned traveler with countless stories to share, you've found your home away from home.
-            </p>
-        </div>
-        <br><br>
+    <div class="container">
+        index.html← Back to Home</button>
 
-        <h2>What We Do:</h2>
-        <div class="points">
-            <li><strong>Travel Planning Workshops</strong>:<br>Get personalized tips on itineraries, accommodations,
-                and hidden gems.</li><br>
+        <header>
+            <h1>Join the Japan Travel Club</h1>
+            <p>Fill in your details and we’ll get in touch soon. よろしくお願いします！</p>
+        </header>
 
-            <li><strong>Cultural Experiences</strong>:<br>Join us for sushi-making classes, calligraphy workshops, tea
-                ceremonies, and
-                seasonalfestivals.</li><br>
+        <form id="joinForm">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="grid">
+                    <div>
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="e.g., Sze Ming Cheung">
+                    </div>
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    </div>
+                </div>
+                <div class="grid">
+                    <div>
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+852 1234 5678">
+                    </div>
+                    <div>
+                        <label for="experience">Have you visited Japan before?</label>
+                        <select id="experience" name="experience" required>
+                            <option value="" disabled selected>Select one</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
 
-            <li><strong>Language Exchange</strong>:<br>Learn essential Japanese phrases and practice with native
-                speakers.</li><br>
+            <fieldset>
+                <legend>Travel Preferences</legend>
+                <label for="destination">Favorite Destination in Japan</label>
+                <input type="text" id="destination" name="destination" placeholder="Kyoto, Hokkaido, Okinawa, …">
 
-            <li><strong>Film & Anime Nights</strong>:<br>Dive into Japanese pop culture with screenings and
-                discussions.</li><br>
+                <label for="interest">Top Interests</label>
+                <input type="text" id="interest" name="interest" placeholder="Food, history, anime, nature, …">
 
-            <li><strong>Group Trips</strong>:<br>Explore Japan together through organized trips to iconic destinations
-                like Tokyo, Kyoto, Osaka, and beyond!</li>
-        </div>
-        <h2>Why Join Us?</h2><br>
-        <div class="text">
-            <p>
-                Connect with like-minded people who share your love for Japan.
-                Gain insider knowledge and travel hacks you won’t find in guidebooks.
-                Build friendships and create unforgettable memories together.
-                Let’s explore, learn, and discover Japan—one adventure at a time!
+                <label for="reason">Why do you want to join?</label>
+                <textarea id="reason" name="reason" rows="4" placeholder="Tell us what you’re excited about!"></textarea>
+            </fieldset>
 
-                Feel free to reach out with questions, ideas, or just to say "Konnichiwa!" We can’t wait to embark on
-                this
-                journey with you.
-            </p>
-        </div>
+            <div class="actions">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
 
-        <h1>Join the Japan Travel Club!</h1>
-        <p>Fill out the form below to become part of our amazing community.</p>
-        <button class="joinbutton" onclick="window.location.href='JoinUs.html'">Join US</button>
+            <p class="note">By submitting, you agree to be contacted about club activities. We respect your privacy.</p>
+        </form>
+    </div>
 
-    </fieldset>
+    <script>
+        // Simple confirmation on submit
+        document.getElementById('joinForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thanks for joining the Japan Travel Club! We’ll contact you soon.');
+            // TODO: Replace the alert with actual submission logic (fetch/XHR) if you have a backend.
+            this.reset();
+        });
+    </script>
 </body>
-
 </html>
