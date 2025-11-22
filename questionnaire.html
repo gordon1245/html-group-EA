@@ -6,29 +6,28 @@
   <title>Questionnaire</title>
   <script>
     function print_result() {
-      var name = document.f1.name.value;
-
-      var gender = document.f1.gender.value;
-
-      var age = document.f1.age.value;
-
-      var email = document.f1.email.value;
-
+      var name = document.question.name.value;
+      var gender = document.question.gender.value;
+      var age = document.question.age.value;
+      var email = document.question.email.value;
       var question = [];
       var questioncheckbox = document.getElementsByName("question");
       for (var i = 0; i < questioncheckbox.length; i++) {
         if (questioncheckbox[i].checked) {
           question.push(questioncheckbox[i].value);
         }
-        var userquestion = document.f1.userquestion.value;
       }
-      var userquestion = document.f1.userquestion.value;
-      alert("Name: " + name);
-      alert("gender: " + gender);
-      alert("Age: " + age);
-      alert("Email: " + email);
-      alert("Type of information interested in: " + question);
-      alert("Question: " + userquestion);
+      var userquestion = document.question.userquestion.value;
+      
+      alert(
+        "Name: " + name +
+        "\nGender: " + gender +
+        "\nAge: " + age +
+        "\nEmail:" + email +
+        "\nType of information interested in:\n" + question.join(" ,") +
+        "\nQuestion:\n" + userquestion
+      );
+
     }
   </script>
   <style type="text/css">
@@ -132,10 +131,10 @@
           </tr>
           <tr>
             <td>
-              <input type="checkbox" name="question" value="food" />Food
-              <input type="checkbox" name="question" value="TA" />Tourist attractions
-              <input type="checkbox" name="question" value="pts" />Place to stay
-              <input type="checkbox" name="question" value="TI" />Travel insurance
+              <input type="checkbox" name="question" value="Food" />Food
+              <input type="checkbox" name="question" value="Tourist attractions" />Tourist attractions
+              <input type="checkbox" name="question" value="Place to stay" />Place to stay
+              <input type="checkbox" name="question" value="Travel insurance" />Travel insurance
               <input type="checkbox" name="question" value="Itinerary" />Itinerary
             </td>
           </tr>
