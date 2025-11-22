@@ -1,8 +1,45 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+          <script type="text/javascript"
+                    src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3IRBnKtdlYBE4S1l9jtwTxAEeTw61ajDJssxaxVpjbEKohidyB_YSyCCgRwN0IDNK-HOYDwd38IBLT8BPsg8ycdNxrbQ7upQbmYaFBshZz580UavPwzBjsDhPySrJapHaIuYB0U3sn0eaekYaOKDakP7NMnP3tyuoUDgrgW7txluZPze7VkudKNh1iMH4Cz_"
+                    charset="UTF-8"></script>
+          <link rel="stylesheet" crossorigin="anonymous"
+                    href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tb29kbGUyNTI2LnZ0Yy5lZHUuaGsvcGx1Z2luZmlsZS5waHAvNjc5MDgyL2Fzc2lnbnN1Ym1pc3Npb25fZmlsZS9zdWJtaXNzaW9uX2ZpbGVzLzQxNzA1Ni9sYWIwOV8xLmh0bWw_Zm9yY2Vkb3dubG9hZD0x" />
+          <script>
+                    function print_result() {
+                              var name = document.f1.name.value;
+                              alert("Name = " + name);
+                              var age = document.f1.age.value;
+                              alert("age = " + age);
+                              var url = document.f1.url.value;
+                              alert("url = " + url);
+                              var time = document.f1.time.value;
+                              alert("time = " + time);
+                              var color = document.f1.color.value;
+                              alert("color = " + color);
+                              var gender = document.f1.gender.value;
+                              alert("gender = " + gender);
+                              var dse = [];
+                              var dsecheckbox = document.getElementsByName("dse");
+                              for (var i = 0; i < dsecheckbox.length; i++) {
+                                        if (dsecheckbox[i].checked) {
+                                                  dse.push(dsecheckbox[i].value);
+                                        }
+                              }
+                              alert("dse = " + dse)
+                              var index = document.f1.sport.value;
+                              var sport_val = document.f1.sport.option[index].value;
+                              var sport_text = document.f1.sport.option[index].text;
+                              alert("Favorite Sports = " + sport_text + " " + sport_val);
+                    }
+          </script>
+</head>
+
 <body>
-  <header>
-    <h1>Internet Explorer 9</h1>
-  </header>
+          <header>
+                    <h1>Questionnaire</h1>
+          </header>
 </body>
 </html>
