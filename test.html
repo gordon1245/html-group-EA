@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Japan Travel Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 1.8rem;
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 10px auto;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form {
+            margin-top: 30px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    index.htmlBack</button>
+    <div class="container">
+        <h1>🌸 Welcome to the Japan Travel Club! 🌸</h1>
+        <p>Konnichiwa, fellow travelers and Japan enthusiasts! We are the <strong>Japan Travel Club</strong>—a vibrant community of adventurers, culture lovers, and dreamers united by our passion for exploring the Land of the Rising Sun. Whether you’re planning your first trip to Japan or you’re a seasoned traveler with countless stories to share, you’ve found your home away from home.</p>
+
+        <h2>What We Offer</h2>
+        <ul>
+            <li><strong>Travel Planning Workshops:</strong> Personalized tips on itineraries, accommodations, and hidden gems.</li>
+            <li><strong>Cultural Experiences:</strong> Sushi-making classes, calligraphy workshops, tea ceremonies, and seasonal festivals.</li>
+            <li><strong>Language Exchange:</strong> Learn essential Japanese phrases and practice with native speakers.</li>
+            <li><strong>Film & Anime Nights:</strong> Dive into Japanese pop culture with screenings and discussions.</li>
+            <li><strong>Group Trips:</strong> Explore Japan together through organized tours to Tokyo, Kyoto, Osaka, and beyond!</li>
+        </ul>
+
+        <h2>Why Join Us?</h2>
+        <p>Connect with like-minded people, gain insider knowledge, and create unforgettable memories together. Let’s explore, learn, and discover Japan—one adventure at a time! Feel free to reach out with questions, ideas, or just to say <strong>“Konnichiwa!”</strong> We can’t wait to embark on this journey with you.</p>
+
+        <!-- Questionnaire Form -->
+        <form>
+            <h2>Join Our Club</h2>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="destination">Favorite Destination in Japan:</label>
+            <input type="text" id="destination" name="destination">
+
+            <label for="reason">Why do you want to join?</label>
+            <textarea id="reason" name="reason" rows="4"></textarea>
+
+            <label for="experience">Have you visited Japan before?</label>
+            <select id="experience" name="experience">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
