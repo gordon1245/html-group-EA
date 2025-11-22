@@ -2,44 +2,128 @@
 <html>
 
 <head>
-          <script type="text/javascript"
-                    src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3IRBnKtdlYBE4S1l9jtwTxAEeTw61ajDJssxaxVpjbEKohidyB_YSyCCgRwN0IDNK-HOYDwd38IBLT8BPsg8ycdNxrbQ7upQbmYaFBshZz580UavPwzBjsDhPySrJapHaIuYB0U3sn0eaekYaOKDakP7NMnP3tyuoUDgrgW7txluZPze7VkudKNh1iMH4Cz_"
-                    charset="UTF-8"></script>
-          <link rel="stylesheet" crossorigin="anonymous"
-                    href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tb29kbGUyNTI2LnZ0Yy5lZHUuaGsvcGx1Z2luZmlsZS5waHAvNjc5MDgyL2Fzc2lnbnN1Ym1pc3Npb25fZmlsZS9zdWJtaXNzaW9uX2ZpbGVzLzQxNzA1Ni9sYWIwOV8xLmh0bWw_Zm9yY2Vkb3dubG9hZD0x" />
-          <script>
-                    function print_result() {
-                              var name = document.f1.name.value;
-                              alert("Name = " + name);
-                              var age = document.f1.age.value;
-                              alert("age = " + age);
-                              var url = document.f1.url.value;
-                              alert("url = " + url);
-                              var time = document.f1.time.value;
-                              alert("time = " + time);
-                              var color = document.f1.color.value;
-                              alert("color = " + color);
-                              var gender = document.f1.gender.value;
-                              alert("gender = " + gender);
-                              var dse = [];
-                              var dsecheckbox = document.getElementsByName("dse");
-                              for (var i = 0; i < dsecheckbox.length; i++) {
-                                        if (dsecheckbox[i].checked) {
-                                                  dse.push(dsecheckbox[i].value);
-                                        }
-                              }
-                              alert("dse = " + dse)
-                              var index = document.f1.sport.value;
-                              var sport_val = document.f1.sport.option[index].value;
-                              var sport_text = document.f1.sport.option[index].text;
-                              alert("Favorite Sports = " + sport_text + " " + sport_val);
-                    }
-          </script>
+    <script type="text/javascript"
+        src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3IRBnKtdlYBE4S1l9jtwTxAEeTw61ajDJssxaxVpjbEKohidyB_YSyCCgRwN0IDNK-HOYDwd38IBLT8BPsg8ycdNxrbQ7upQbmYaFBshZz580UavPwzBjsDhPySrJapHaIuYB0U3sn0eaekYaOKDakP7NMnP3tyuoUDgrgW7txluZPze7VkudKNh1iMH4Cz_"
+        charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+        href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tb29kbGUyNTI2LnZ0Yy5lZHUuaGsvcGx1Z2luZmlsZS5waHAvNjc5MDgyL2Fzc2lnbnN1Ym1pc3Npb25fZmlsZS9zdWJtaXNzaW9uX2ZpbGVzLzQxNzA1Ni9sYWIwOV8xLmh0bWw_Zm9yY2Vkb3dubG9hZD0x" />
+    <script>
+        function print_result() {
+            var name = document.f1.name.value;
+            alert("Name = " + name);
+            var age = document.f1.age.value;
+            alert("age = " + age);
+            var url = document.f1.url.value;
+            alert("url = " + url);
+            var time = document.f1.time.value;
+            alert("time = " + time);
+            var color = document.f1.color.value;
+            alert("color = " + color);
+            var gender = document.f1.gender.value;
+            alert("gender = " + gender);
+            var dse = [];
+            var dsecheckbox = document.getElementsByName("dse");
+            for (var i = 0; i < dsecheckbox.length; i++) {
+                if (dsecheckbox[i].checked) {
+                    dse.push(dsecheckbox[i].value);
+                }
+            }
+            alert("dse = " + dse)
+            var index = document.f1.sport.value;
+            var sport_val = document.f1.sport.option[index].value;
+            var sport_text = document.f1.sport.option[index].text;
+            alert("Favorite Sports = " + sport_text + " " + sport_val);
+        }
+    </script>
 </head>
 
 <body>
-          <header>
-                    <h1>Questionnaire</h1>
-          </header>
+    <header>
+        <h1>Questionnaire</h1>
+    </header>
+    <form name="f1" onSubmit="print_result()">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <!-- (a) -->
+                    <input type="text" name="name" pattern="^[A-Z].*" title="Capital first character" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <td>
+                    <!-- (b) -->
+                    <input type="number" name="age" min="18" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Website Address</td>
+                <td>
+                    <!-- (c) -->
+                    <input type="url" name="url" title="http://domainName" required pattern="https?://.+\..+" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Wake up Time</td>
+                <td>
+                    <!-- (d) -->
+                    <input type="text" title="HH:MM:SS" name="time" pattern="([01]?\d|2[0-3]):[0-5][0-9]:[0-5][0-9]"
+                        required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Favorite color in color code</td>
+                <td>
+                    <!-- (e) -->
+                    <input type="text" title="#hhh or #hhhhhh" name="color" pattern="#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})"
+                        required />
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="M" required="required" />Male
+                    <input type="radio" name="gender" value="F" />Female
+                </td>
+            </tr>
+
+            <tr>
+                <td>DSE Subjects</td>
+                <td>
+                    <input type="checkbox" name="dse" value="eng" />English Language
+                    <input type="checkbox" name="dse" value="chi" />Chinese Language
+                    <input type="checkbox" name="dse" value="math" />Mathematics
+                    <br />
+                    <input type="checkbox" name="dse" value="geo" />Geography
+                    <input type="checkbox" name="dse" value="csci" />Combined Science
+                </td>
+            </tr>
+
+            <tr>
+                <td>Favorite Sports</td>
+                <td>
+                    <select name="sport">
+                        <option value="">Please select one sport</option>
+                        <option value="fb">Football</option>
+                        <option value="sw">Swimming</option>
+                        <option value="jg">Jogging</option>
+                        <option value="cy">Cycling</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        <input type="submit" value="Submit" />
+    </form>
+
 </body>
+
 </html>
