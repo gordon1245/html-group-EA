@@ -15,34 +15,76 @@
       alert("gender: " + gender);
       var age = document.f1.age.value;
       alert("Age: " + age);
-      var url = document.f1.url.value;
+      var email = document.f1.email.value;
       alert("Email: " + email);
       var question = [];
       var questioncheckbox = document.getElementsByName("question");
-      for (var i = 0; i < dsecheckbox.length; i++) {
-        if (dsecheckbox[i].checked) {
-          dse.push(dsecheckbox[i].value);
+      for (var i = 0; i < questioncheckbox.length; i++) {
+        if (questioncheckbox[i].checked) {
+          question.push(questioncheckbox[i].value);
         }
+        var userquestion = document.f1.userquestion.value;
       }
       alert("Type of information interested in: " + question)
-      var index = document.f1.sport.value;
-      var sport_val = document.f1.sport.option[index].value;
-      var sport_text = document.f1.sport.option[index].text;
-      alert("Favorite Sports = " + sport_text + " " + sport_val);
+      var userquestion = document.f1.userquestion.value;
+      alert("Question: " + userquestion);
     }
   </script>
   <style type="text/css">
-  fieldset { border-radius: 10px; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    fieldset {
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    td, input, textarea, legend, label {
+      font-size: 1.3rem;
+    }
+
+
+    form {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 1200px;
+    }
   </style>
 </head>
 
-<body>
+<body style="background-color: #f9f9f9;">
   <header>
     <h1>Questionnaire</h1>
-      <form name="question" onSubmit="print_result()">
+    <p>
+    Please fill out the questionnaire below so that we can serve you better.<br>
+    We will reply to your questions with email as soon as possible.
+    <p>
+    <form name="question" onSubmit="print_result()">
 
-        <fieldset>
-          <legend>Personal Details</legend>
+      <fieldset>
+        <legend>
+          <h2>Personal Details</h2>
+        </legend>
         <table>
           <tr>
             <td>Name</td>
@@ -70,13 +112,20 @@
           <tr>
             <td>Email</td>
             <td>
-              <input type="email" name="email" title="Please enter a valid Email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
+              <input type="email" name="email" title="Please enter a valid Email" required
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
             </td>
           </tr>
-        </fieldset>
-
+        </table>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>
+          <h2>Travel Details</h2>
+        </legend>
+        <table>
           <tr>
-            <td>Type of information interested in</td>
+            <td>Type of information interested in:<br></td>
             <td>
               <input type="checkbox" name="question" value="food" />Food
               <input type="checkbox" name="question" value="TA" />Tourist attractions
@@ -85,9 +134,14 @@
               <input type="checkbox" name="question" value="Itinerary" />Itinerary
             </td>
           </tr>
+          <tr>
+          </tr>
         </table>
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
+        <textarea id="userquestion" name="userquestion" rows="10" cols="100">Enter the information you want to know</textarea>
+      </fieldset>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
 </body>
+
 </html>
