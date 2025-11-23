@@ -31,28 +31,38 @@
   </script>
   <style type="text/css">
     body {
-      display: flex; /* set the display property to flex */
-      justify-content: center; /* set the justify-content property to center */
-      align-items: center; /* set the align-items property to center */
-      height: 1300px; /* set the height of the body to 100% of the viewport height */
-      margin: 0; /* remove the default margin */
-      font-family: Arial, sans-serif; /* set the font family */
-    } 
-    
+      display: flex;
+      /* set the display property to flex */
+      justify-content: center;
+      /* set the justify-content property to center */
+      align-items: center;
+      /* set the align-items property to center */
+      height: 1300px;
+      /* set the height of the body to 100% of the viewport height */
+      margin: 0;
+      /* remove the default margin */
+      font-family: Arial, sans-serif;
+      /* set the font family */
+    }
+
     fieldset {
-      border-radius: 10px; /* set the border-radius to 10px */
+      border-radius: 10px;
+      /* set the border-radius to 10px */
     }
 
     h1 {
-      font-size: 3rem; /* set the font size to 3rem */
+      font-size: 3rem;
+      /* set the font size to 3rem */
     }
 
     h2 {
-      font-size: 2rem; /* set the font size to 2rem */
+      font-size: 2rem;
+      /* set the font size to 2rem */
     }
 
     p {
-      font-size: 1.5rem; /* set the font size to 1.5rem */
+      font-size: 1.5rem;
+      /* set the font size to 1.5rem */
     }
 
     td,
@@ -60,33 +70,50 @@
     textarea,
     legend,
     label {
-      font-size: 1.3rem; /* set the font size to 1.3rem */
+      font-size: 1.3rem;
+      /* set the font size to 1.3rem */
     }
+
     button {
-      position: absolute; /* set the position to absolute */
-      top: 70px; /* set the top position to 70px */
-      left: 150px; /* set the left position to 150px */
-      padding: 10px 20px; /* set the padding to 10px 20px */
-      background-color: #007BFF; /* set the background color to #007BFF */
-      color: white; /* set the text color to white */
-      border: none; /* remove the border */
-      border-radius: 5px; /* set the border-radius to 5px */
-      cursor: pointer; /* set the cursor to pointer */
-      font-size: 16px; / * set the font size to 16px */
+      position: absolute;
+      /* set the position to absolute */
+      top: 70px;
+      /* set the top position to 70px */
+      left: 150px;
+      /* set the left position to 150px */
+      padding: 10px 20px;
+      /* set the padding to 10px 20px */
+      background-color: #007BFF;
+      /* set the background color to #007BFF */
+      color: white;
+      /* set the text color to white */
+      border: none;
+      /* remove the border */
+      border-radius: 5px;
+      /* set the border-radius to 5px */
+      cursor: pointer;
+      /* set the cursor to pointer */
+      font-size: 16px; /* set the font size to 16px */
     }
 
     form {
-      background-color: #f0f0f0; /* set the background color to #f0f0f0 */
-      padding: 20px; /* set the padding to 20px */
-      border-radius: 10px; /* set the border-radius to 10px */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a box shadow */
+      background-color: #f0f0f0;
+      /* set the background color to #f0f0f0 */
+      padding: 20px;
+      /* set the padding to 20px */
+      border-radius: 10px;
+      /* set the border-radius to 10px */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* add a box shadow */
       width: 1200px;
+      /* set the width to 1200px */
     }
   </style>
 </head>
 
 <body style="background-color: #f9f9f9;">
-  <button onclick="window.location.href='index.html'">Back</button>
+  <!-- Back button -->
+  <button onclick="window.location.href='index.html'">Back</button> <!-- Back button -->
   <header>
     <h1>Questionnaire</h1>
     <p>
@@ -101,6 +128,7 @@
         </legend>
         <table>
           <tr>
+            <!-- Name must not be empty -->
             <td>Name</td>
             <td>
               <input type="text" name="name" title="Name can not be empty" required />
@@ -108,6 +136,7 @@
           </tr>
 
           <tr>
+            <!-- Gender must not be empty -->
             <td>Gender</td>
             <td>
               <input type="radio" name="gender" value="M" required="required" />Male
@@ -117,6 +146,7 @@
           </tr>
 
           <tr>
+            <!-- Age must be at least 18 -->
             <td>Age</td>
             <td>
               <input type="number" name="age" min="18" required />
@@ -124,6 +154,7 @@
           </tr>
 
           <tr>
+            <!-- Email must be valid -->
             <td>Email</td>
             <td>
               <input type="email" name="email" title="Please enter a valid Email" required />
@@ -141,6 +172,7 @@
           </tr>
           <tr>
             <td>
+              <!-- Type of information interested in -->
               <input type="checkbox" name="question" value="Food" />Food
               <input type="checkbox" name="question" value="Tourist attractions" />Tourist attractions
               <input type="checkbox" name="question" value="Place to stay" />Place to stay
@@ -151,12 +183,15 @@
         </table>
         <br>
         <tr>
+          <!-- User question -->
           <textarea id="userquestion" name="userquestion" rows="10" cols="100"
             placeholder="Enter the information you want to know"></textarea>
         </tr>
       </fieldset>
       <br />
+      <!-- Submit -->
       <input type="submit" value="Submit" />
     </form>
 </body>
+
 </html>
