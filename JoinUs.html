@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,13 +10,7 @@
       var gender = document.question.gender.value;
       var age = document.question.age.value;
       var email = document.question.email.value;
-      var question = [];
-      var questioncheckbox = document.getElementsByName("question");
-      for (var i = 0; i < questioncheckbox.length; i++) {
-        if (questioncheckbox[i].checked) {
-          question.push(questioncheckbox[i].value);
-        }
-      }
+      var phone = document.question.phone.value;
       var userquestion = document.question.userquestion.value;
 
       alert(
@@ -24,20 +18,25 @@
         "\nGender: " + gender +
         "\nAge: " + age +
         "\nEmail:" + email +
-        "\nType of information interested in:\n" + question.join(" ,") +
-        "\nQuestion:\n" + userquestion
+        "\nPhone Number:" + phone
       );
 
     }
   </script>
   <style type="text/css">
     body {
+      background-color: #f9f9f9;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 90vh;
+      height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     fieldset {
@@ -87,7 +86,7 @@
   </style>
 </head>
 
-<body style="background-color: #f9f9f9;">
+<body>
   <button onclick="window.location.href='index.html'">Back</button>
   <header>
     <h1>Join Us - Japan Travel Club</h1>
@@ -97,10 +96,19 @@
     <form name="question" onSubmit="print_result()">
 
       <fieldset>
-        <legend>
-          <h2>Personal Details</h2>
-        </legend>
         <table>
+
+          <tr>
+            <td>Email</td>
+            <td>
+              <input type="email" name="email" title="Please enter a valid Email" required
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
+            </td>
+            <td>Phone Number</td>
+            <td>
+              <input type="tel" name="phone" title="Phone number must be 8 numbers" required pattern="^\d{8}$" />
+            </td>
+          </tr>
           <tr>
             <td>Name</td>
             <td>
@@ -123,23 +131,8 @@
               <input type="number" name="age" min="18" required />
             </td>
           </tr>
-
-          <tr>
-            <td>Email</td>
-            <td>
-              <input type="email" name="email" title="Please enter a valid Email" required
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
-            </td>
-          </tr>
-                    <tr>
-            <td>Phone Number</td>
-            <td>
-              <input type="email" name="phone" title="Please enter your phone number" required
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
-            </td>
-          </tr>
         </table>
-        
+
       </fieldset>
       <br />
       <input type="submit" value="Submit" />
