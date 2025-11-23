@@ -6,18 +6,18 @@
   <title>Questionnaire</title>
   <script>
     function print_result() {
-      var name = document.question.name.value;
-      var gender = document.question.gender.value;
-      var age = document.question.age.value;
-      var email = document.question.email.value;
-      var question = [];
-      var questioncheckbox = document.getElementsByName("question");
-      for (var i = 0; i < questioncheckbox.length; i++) {
-        if (questioncheckbox[i].checked) {
-          question.push(questioncheckbox[i].value);
+      var name = document.question.name.value; // Get the value of the name input
+      var gender = document.question.gender.value; // Get the value of the gender input
+      var age = document.question.age.value; // Get the value of the age input
+      var email = document.question.email.value; // Get the value of the email input
+      var question = []; // Create an array to store the checked values
+      var questioncheckbox = document.getElementsByName("question"); // Get all the checkbox elements
+      for (var i = 0; i < questioncheckbox.length; i++) { // Loop through the checkbox elements
+        if (questioncheckbox[i].checked) {  // If the checkbox is checked
+          question.push(questioncheckbox[i].value); // Add the value of the checkbox to the array
         }
       }
-      var userquestion = document.question.userquestion.value;
+      var userquestion = document.question.userquestion.value;// Get the value of the textarea
 
       alert(
         "Name: " + name +
@@ -26,11 +26,11 @@
         "\nEmail:" + email +
         "\nType of information interested in:\n" + question.join(" ,") +
         "\nQuestion:\n" + userquestion
-      );
+      );// Display the values
 
     }
   </script>
-  <style type="text/css">
+  <style type="text/css"> 
     body {
       display: flex;
       justify-content: center;
