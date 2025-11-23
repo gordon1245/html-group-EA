@@ -1,0 +1,118 @@
+body { 
+    margin: 0px;
+    font-family: Georgia; 
+}
+
+#TouristAttraction, #food, #PTS, #Itinerary, #footer {
+    background: #f9f9f9; 
+    border: 1px solid black; 
+    border-radius: 8px;
+    margin: 5px; 
+    padding: 15px; 
+}
+    
+#flex-container { 
+    display: flex; 
+    flex-flow: row wrap; 
+}
+
+#TouristAttraction { 
+    order: 1;
+    height: auto; 
+    background: #FCC; 
+    width: 10px; 
+    flex-grow: 1; 
+    width: 100%;
+    font-size: 30px;
+}
+
+#food { 
+    order: 2;
+    height: auto; 
+    background: #FCC; 
+    width: 10px; 
+    flex-grow: 1; 
+    width: 100%;
+}
+
+#food ul{
+    font-size: 20px;
+}
+
+#TouristAttraction ul{
+    font-size: 20px;
+}
+
+#PTS { 
+    order: 3;
+    height: auto; 
+    background: #FCC; 
+    width: 10px; 
+    flex-grow: 1; 
+    width: 100%;
+}
+
+#Itinerary { 
+    order: 4;
+    height: auto; 
+    background: #FCC; 
+    width: 10px; 
+    flex-grow: 1; 
+    width: 100%;; 
+}
+
+#footer { 
+    order: 5;
+    height: auto; 
+    background: #FCC; 
+    width: 10px; 
+    flex-grow: 1; 
+    width: 100%;
+}
+
+#TouristAttraction img { 
+    float: left; 
+    margin-right : 10px; 
+}
+
+#TouristAttraction div { 
+    clear: none; 
+}
+
+@media only screen and (max-width: 1000px) {
+    #food { order: 4; width: 100px; }
+    #PTS { height: auto;}
+    #TouristAttraction{font-size: 20px;}
+    #Itinerary { order: 2; width: 100px; }
+   }
+
+@media only screen and (max-width: 800px) {
+    #food { order: 4; width: 100%; }
+    #food ul { list-style: none; display: flex; flex-flow: row;
+    justify-content: space-around; }
+    #TouristAttraction{font-size: 20px;}
+    #TouristAttraction ul {word-wrap:break-word; display: flex; flex-flow: row;
+    justify-content: space-around; font-size: 20px}
+    #food h1{
+        font-size: 20px;
+    }
+    #PTS { height: auto;}
+    #Itinerary { display: none; }
+   }
+
+#PTS h1 { 
+    line-height: 0.2; 
+    -webkit-column-span: all; 
+}
+
+#food h1 { 
+    word-wrap: break-word;
+    line-height: 0.2; 
+    -webkit-column-span: all; 
+}
+
+#food img{
+    float: right;
+    width: 100px;
+    height: 67px;
+}
