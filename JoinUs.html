@@ -11,7 +11,6 @@
       var age = document.question.age.value;
       var email = document.question.email.value;
       var phone = document.question.phone.value;
-      var userquestion = document.question.userquestion.value;
 
       alert(
         "Email:" + email +
@@ -24,28 +23,6 @@
     }
   </script>
   <style type="text/css">
-    body {
-      background-color: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    form {
-      background-color: #f0f0f0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 1200px;
-    }
-
-    fieldset {
-      border-radius: 10px;
-    }
-
     button {
       position: absolute;
       top: 70px;
@@ -59,6 +36,36 @@
       font-size: 16px;
     }
 
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 120px;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    fieldset {
+      font-size: 1.2rem;
+    }
 
   </style>
 </head>
@@ -67,48 +74,45 @@
   <button onclick="window.location.href='index.html'">Back</button>
   <header>
     <h1>Join Us - Japan Travel Club</h1>
-      Join our club and get exclusive access to the latest travel information, exclusive deals and special offers!
+    <p>Join our club and get exclusive access to the latest travel information, exclusive deals and special offers!</p>
   </header>
-    <form name="question" onSubmit="print_result()">
+  <form name="question" onSubmit="print_result()">
+    <fieldset>
+      <table>
 
-      <fieldset>
-        <table>
-
-          <tr>
-            <td>Email</td>
-            <td>
-              <input type="email" name="email" title="Please enter a valid Email" required
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
-            </td>
-            <td>Phone Number</td>
-            <td>
-              <input type="tel" name="phone" title="Phone number must be 8 numbers" required pattern="^\d{8}$" />
-            </td>
-          </tr>
-          <tr>
-            <td>Name</td>
-            <td>
-              <input type="text" name="name" pattern="^[A-Z].*" title="Capital first character" required />
-            </td>
-            <td>Age</td>
-            <td>
-              <input type="number" name="age" min="18" required />
-            </td>
-          </tr>
-          <tr>
-            <td>Gender</td>
-            <td>
-              <input type="radio" name="gender" value="M" required="required" />Male
-              <input type="radio" name="gender" value="F" />Female
-              <input type="radio" name="gender" value="NA" />Prefer not to say
-            </td>
-          </tr>
-        </table>
-
-      </fieldset>
+        <tr>
+          <td>Email</td>
+          <td>
+            <input type="email" name="email" title="Please enter a valid Email" required />
+          </td>
+          <td>Phone Number</td>
+          <td>
+            <input type="tel" name="phone" title="Phone number must be 8 digits" required pattern="^\d{8}$" />
+          </td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" name="name" title="Capital first character" required />
+          </td>
+          <td>Age</td>
+          <td>
+            <input type="number" name="age" min="18" required />
+          </td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" value="M" required="required" />Male
+            <input type="radio" name="gender" value="F" />Female
+            <input type="radio" name="gender" value="NA" />Prefer not to say
+          </td>
+        </tr>
+      </table>
       <br />
       <input type="submit" value="Submit" />
-    </form>
+    </fieldset>
+  </form>
 </body>
 
 </html>
