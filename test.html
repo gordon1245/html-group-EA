@@ -3,132 +3,106 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>Join Us - Japan Travel Club</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join US</title>
   <script>
     function print_result(event) {
       if (event) event.preventDefault();
 
-      const form = document.forms["question"];
-      const name = form.name.value.trim();
-      const gender = form.gender.value;
-      const age = form.age.value.trim();
-      const email = form.email.value.trim();
-      const phone = form.phone.value.trim();
+      var name = document.question.name.value;
+      var gender = document.question.gender.value;
+      var age = document.question.age.value;
+      var email = document.question.email.value;
+      var phone = document.question.phone.value;
 
       alert(
-        "Name: " + name +
-        "\nGender: " + gender +
+        "Email: " + email +
+        "\nPhone Number: " + phone +
+        "\nName: " + name +
         "\nAge: " + age +
-        "\nEmail: " + email +
-        "\nPhone Number: " + phone
+        "\nGender: " + gender
       );
 
       return false;
     }
   </script>
   <style>
-    :root {
-      --primary: #0a66ff;
-      --bg: #f9f9f9;
-      --card: #ffffff;
-      --text: #222;
-      --muted: #666;
-      --border: #e5e7eb;
-    }
-
-    * { box-sizing: border-box; }
+    /* 页面整体居中 */
     html, body { height: 100%; }
-
     body {
-      background-color: var(--bg);
+      background-color: #f9f9f9;
       margin: 0;
       font-family: Arial, sans-serif;
-      color: var(--text);
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: center;   /* 水平居中 */
+      align-items: center;       /* 垂直居中 */
       padding: 24px;
     }
 
+    /* 居中容器（让内容块在中间） */
     .container {
       width: 100%;
-      max-width: 800px;
-    }
-
-    .toolbar {
-      margin-bottom: 12px;
+      max-width: 900px;
       display: flex;
-      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;  /* 让内部块(水平)居中 */
+      gap: 16px;
     }
 
-    .btn {
+    /* 顶部工具栏（返回按钮） */
+    .toolbar {
+      width: 100%;
+      display: flex;
+      justify-content: center; /* 返回按钮居中 */
+    }
+    .toolbar .btn {
       padding: 10px 16px;
-      font-size: 1rem;
+      font-size: 16px;
       border-radius: 8px;
-      border: 1px solid var(--primary);
+      border: 1px solid #007BFF;
       background: transparent;
-      color: var(--primary);
+      color: #007BFF;
       cursor: pointer;
     }
-    .btn.primary {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-    }
 
+    /* 标题与说明文字居中 */
+    header {
+      text-align: center; /* 关键：让标题/说明文字居中 */
+    }
     header h1 {
       font-size: 2rem;
       margin: 0 0 8px;
-      text-align: center;
     }
     header p {
       font-size: 1rem;
-      margin: 0 0 16px;
-      color: var(--muted);
-      text-align: center;
+      margin: 0;
+      color: #555;
     }
 
+    /* 表单卡片 */
     form {
-      background-color: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      background-color: #f0f0f0;
       padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 700px;   /* 缩小点更美观 */
     }
 
     fieldset {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      margin: 0 0 16px;
-    }
-    legend {
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 0 8px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    /* 让表格里的文字、控件居中对齐 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
     }
-    @media (max-width: 640px) {
-      .grid { grid-template-columns: 1fr; }
+    td {
+      padding: 8px;
+      text-align: center; /* 关键：表格单元居中文本 */
+      vertical-align: middle;
     }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    label {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
     input[type="text"],
     input[type="email"],
     input[type="tel"],
@@ -137,27 +111,26 @@
       padding: 10px 12px;
       border: 1px solid #c9ced6;
       border-radius: 8px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      background: #fff;
-    }
-    input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(10, 102, 255, 0.15);
+      width: 100%;        /* 输入框占满单元格 */
+      max-width: 320px;   /* 给个最大宽度，避免太宽 */
+      margin: 0 auto;     /* 输入框在单元格内部居中 */
+      display: block;
     }
 
-    .radios {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
+    /* 提交按钮居中 */
     .actions {
       display: flex;
-      gap: 12px;
       justify-content: center;
-      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .submit-btn {
+      padding: 10px 16px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: #007BFF;
+      color: #fff;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -173,78 +146,62 @@
       <p>Join our club and get exclusive access to the latest travel information, exclusive deals and special offers!</p>
     </header>
 
-    #
-      <fieldset>
-        <legend>Basic Information</legend>
-        <div class="grid">
-          <div class="field">
-            <label for="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              required
-              autocomplete="email"
-              placeholder="you@example.com"
-              title="Please enter a valid Email"
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-            />
-          </div>
-
-          <div class="field">
-            <label for="phone">Phone Number (HK only)</label>
-            <input
-              id="phone"
-              type="tel"
-              name="phone"
-              required
-              inputmode="numeric"
-              autocomplete="tel"
-              placeholder="91234567"
-              title="Phone number must be exactly 8 digits (Hong Kong local number)"
-              pattern="^\d{8}$"
-            />
-          </div>
-
-          <div class="field">
-            <label for="name">Name</label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              required
-              placeholder="Your name"
-              title="Capital first character"
-              pattern="^[A-Z].*"
-            />
-          </div>
-
-          <div class="field">
-            <label for="age">Age</label>
-            <input
-              id="age"
-              type="number"
-              name="age"
-              min="18"
-              required
-              placeholder="18+"
-            />
-          </div>
-
-          <div class="field" style="grid-column: 1 / -1;">
-            <label>Gender</label>
-            <div class="radios" role="radiogroup" aria-label="Gender">
-              <label><input type="radio" name="gender" value="M" required> Male</label>
-              <label><input type="radio" name="gender" value="F"> Female</label>
-              <label><input type="radio" name="gender" value="NA"> Prefer not to say</label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
+    <form name="question" onsubmit="return print_result(event)">
+        <table>
+          <tr>
+            <td>Email</td>
+            <td>
+              <input
+                type="email"
+                name="email"
+                title="Please enter a valid Email"
+                required
+                placeholder="you@example.com"
+                autocomplete="email"
+              />
+            </td>
+            <td>Phone Number</td>
+            <td>
+              <input
+                type="tel"
+                name="phone"
+                title="Phone number must be 8 numbers"
+                required
+                pattern="^\d{8}$"
+                placeholder="91234567"
+                inputmode="numeric"
+                autocomplete="tel"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                title="Capital first character"
+                required
+                placeholder="Your name"
+              />
+            </td>
+            <td>Age</td>
+            <td>
+              <input type="number" name="age" min="18" required />
+            </td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td colspan="3">
+              <label style="margin-right:16px;"><input type="radio" name="gender" value="M" required /> Male</label>
+              <label style="margin-right:16px;"><input type="radio" name="gender" value="F" /> Female</label>
+              <label><input type="radio" name="gender" value="NA" /> Prefer not to say</label>
+            </td>
+          </tr>
+        </table>
 
       <div class="actions">
-        <input type="submit" class="btn primary" value="Submit" />
-        <button type="reset" class="btn">Reset</button>
+        <input type="submit" class="submit-btn" value="Submit" />
       </div>
     </form>
   </div>
