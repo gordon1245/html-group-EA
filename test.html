@@ -3,31 +3,28 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>加入我们 - 日本旅游俱乐部</title>
+  <title>Join Us - Japan Travel Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
     function print_result(event) {
-      // 阻止表单提交导致刷新
       if (event) event.preventDefault();
 
       const form = document.forms["question"];
       const name = form.name.value.trim();
       const gender = form.gender.value;
-      const age = form.age.value;
+      const age = form.age.value.trim();
       const email = form.email.value.trim();
       const phone = form.phone.value.trim();
-      const userquestion = (form.userquestion.value || "").trim() || "(无)";
 
       alert(
-        "姓名: " + name +
-        "\n性别: " + gender +
-        "\n年龄: " + age +
-        "\n邮箱: " + email +
-        "\n电话号码: " + phone +
-        "\n问题:\n" + userquestion
+        "Name: " + name +
+        "\nGender: " + gender +
+        "\nAge: " + age +
+        "\nEmail: " + email +
+        "\nPhone Number: " + phone
       );
 
-      return false; // 防止页面刷新
+      return false;
     }
   </script>
   <style>
@@ -42,38 +39,29 @@
 
     * { box-sizing: border-box; }
     html, body { height: 100%; }
+
     body {
       background-color: var(--bg);
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family: Arial, sans-serif;
       color: var(--text);
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       padding: 24px;
     }
 
     .container {
       width: 100%;
-      max-width: 900px;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin: 0 0 8px;
-    }
-    header p {
-      font-size: 1rem;
-      margin: 0 0 16px;
-      color: var(--muted);
+      max-width: 800px;
     }
 
     .toolbar {
       margin-bottom: 12px;
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      justify-content: flex-start;
     }
+
     .btn {
       padding: 10px 16px;
       font-size: 1rem;
@@ -87,6 +75,18 @@
       background: var(--primary);
       color: #fff;
       border: none;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0 0 8px;
+      text-align: center;
+    }
+    header p {
+      font-size: 1rem;
+      margin: 0 0 16px;
+      color: var(--muted);
+      text-align: center;
     }
 
     form {
@@ -109,7 +109,6 @@
       padding: 0 8px;
     }
 
-    /* 响应式两列网格 */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -133,9 +132,7 @@
     input[type="text"],
     input[type="email"],
     input[type="tel"],
-    input[type="number"],
-    textarea,
-    select {
+    input[type="number"] {
       font-size: 1rem;
       padding: 10px 12px;
       border: 1px solid #c9ced6;
@@ -144,9 +141,7 @@
       transition: border-color 0.2s, box-shadow 0.2s;
       background: #fff;
     }
-    input:focus,
-    textarea:focus,
-    select:focus {
+    input:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(10, 102, 255, 0.15);
     }
@@ -157,16 +152,12 @@
       flex-wrap: wrap;
       align-items: center;
     }
+
     .actions {
       display: flex;
       gap: 12px;
-      justify-content: flex-start;
+      justify-content: center;
       flex-wrap: wrap;
-    }
-
-    .note {
-      font-size: 0.9rem;
-      color: var(--muted);
     }
   </style>
 </head>
@@ -174,20 +165,20 @@
 <body>
   <div class="container">
     <div class="toolbar">
-      index.html返回首页</button>
+      index.htmlBack</button>
     </div>
 
     <header>
-      <h1>加入我们 - 日本旅游俱乐部</h1>
-      <p>加入俱乐部，获取最新旅游资讯、独家优惠与特别活动通知。</p>
+      <h1>Join Us - Japan Travel Club</h1>
+      <p>Join our club and get exclusive access to the latest travel information, exclusive deals and special offers!</p>
     </header>
 
     #
       <fieldset>
-        <legend>基本信息</legend>
+        <legend>Basic Information</legend>
         <div class="grid">
           <div class="field">
-            <label for="email">邮箱</label>
+            <label for="email">Email</label>
             <input
               id="email"
               type="email"
@@ -195,41 +186,41 @@
               required
               autocomplete="email"
               placeholder="you@example.com"
-              title="请输入有效邮箱地址"
-              <!-- 如需更严格校验可添加 pattern -->
+              title="Please enter a valid Email"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             />
-            <span class="note">我们仅用于通知俱乐部活动与优惠。</span>
           </div>
 
           <div class="field">
-            <label for="phone">电话号码</label>
+            <label for="phone">Phone Number (HK only)</label>
             <input
               id="phone"
               type="tel"
               name="phone"
               required
-              inputmode="tel"
+              inputmode="numeric"
               autocomplete="tel"
-              placeholder="+81 90-1234-5678"
-              title="可输入国家区号、空格、短横、括号"
-              pattern="^\+?[0-9()\-\s]{7,20}$"
+              placeholder="91234567"
+              title="Phone number must be exactly 8 digits (Hong Kong local number)"
+              pattern="^\d{8}$"
             />
           </div>
 
           <div class="field">
-            <label for="name">姓名</label>
+            <label for="name">Name</label>
             <input
               id="name"
               type="text"
               name="name"
               required
-              placeholder="请输入姓名"
-              title="建议首字母大写（可根据需要移除约束）"
+              placeholder="Your name"
+              title="Capital first character"
+              pattern="^[A-Z].*"
             />
           </div>
 
           <div class="field">
-            <label for="age">年龄</label>
+            <label for="age">Age</label>
             <input
               id="age"
               type="number"
@@ -241,27 +232,19 @@
           </div>
 
           <div class="field" style="grid-column: 1 / -1;">
-            <label>性别</label>
-            <div class="radios" role="radiogroup" aria-label="性别">
-              <label><input type="radio" name="gender" value="男" required> 男</label>
-              <label><input type="radio" name="gender" value="女"> 女</label>
-              <label><input type="radio" name="gender" value="保密"> 保密</label>
+            <label>Gender</label>
+            <div class="radios" role="radiogroup" aria-label="Gender">
+              <label><input type="radio" name="gender" value="M" required> Male</label>
+              <label><input type="radio" name="gender" value="F"> Female</label>
+              <label><input type="radio" name="gender" value="NA"> Prefer not to say</label>
             </div>
           </div>
         </div>
       </fieldset>
 
-      <fieldset>
-        <legend>您的问题</legend>
-        <div class="field">
-          <label for="userquestion">留言</label>
-          <textarea id="userquestion" name="userquestion" rows="4" placeholder="例如：请推荐东京5日行程，预算约¥XXXX…"></textarea>
-        </div>
-      </fieldset>
-
       <div class="actions">
-        <input type="submit" class="btn primary" value="提交" />
-        <button type="reset" class="btn">重置</button>
+        <input type="submit" class="btn primary" value="Submit" />
+        <button type="reset" class="btn">Reset</button>
       </div>
     </form>
   </div>
