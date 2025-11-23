@@ -23,18 +23,30 @@
     }
   </script>
   <style type="text/css">
-    button {
+    .homebutton,
+    .backbutton {
       position: absolute;
-      top: 70px;
-      left: 150px;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 12px 24px;
       font-size: 16px;
+      font-weight: bold;
+      border: none;
+      background-color: #007BFF;
+      color: #ffffff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
+
+    .homebutton {
+      top: 75px;
+      left: 170px;
+    }
+
+    .backbutton {
+      top: 130px;
+      left: 170px;
+    }
+
 
     body {
       display: flex;
@@ -66,12 +78,12 @@
     fieldset {
       font-size: 1.2rem;
     }
-
   </style>
 </head>
 
 <body>
-  <button onclick="window.location.href='index.html'">Back</button>
+  <button class="homebutton" onclick="window.location.href='index.html'">Home</button>
+  <button class="backbutton" onclick="window.location.href='Aboutus.html'">Back</button>
   <header>
     <h1>Join Us - Japan Travel Club</h1>
     <p>Join our club and get exclusive access to the latest travel information, exclusive deals and special offers!</p>
@@ -110,6 +122,7 @@
         </tr>
       </table>
       <br />
+      <input type="button" value="Clear" onclick="document.question.reset();" />
       <input type="submit" value="Submit" />
     </fieldset>
   </form>
