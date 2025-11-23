@@ -1,197 +1,269 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>Join Us - Japan Travel Club</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-        :root {
-            --primary: #007BFF;
-            --accent: #28a745;
-            --bg: #f9f9f9;
-            --text: #222;
-            --muted: #666;
-            --border: #ddd;
-        }
+  <meta charset="UTF-8" />
+  <title>加入我们 - 日本旅游俱乐部</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    function print_result(event) {
+      // 阻止表单提交导致刷新
+      if (event) event.preventDefault();
 
-        * { box-sizing: border-box; }
+      const form = document.forms["question"];
+      const name = form.name.value.trim();
+      const gender = form.gender.value;
+      const age = form.age.value;
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const userquestion = (form.userquestion.value || "").trim() || "(无)";
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 24px;
-        }
+      alert(
+        "姓名: " + name +
+        "\n性别: " + gender +
+        "\n年龄: " + age +
+        "\n邮箱: " + email +
+        "\n电话号码: " + phone +
+        "\n问题:\n" + userquestion
+      );
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+      return false; // 防止页面刷新
+    }
+  </script>
+  <style>
+    :root {
+      --primary: #0a66ff;
+      --bg: #f9f9f9;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #666;
+      --border: #e5e7eb;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      background-color: var(--bg);
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px;
+    }
 
-        header h1 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin: 0 0 8px;
-        }
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
 
-        header p {
-            color: var(--muted);
-            margin: 0;
-        }
+    header h1 {
+      font-size: 2rem;
+      margin: 0 0 8px;
+    }
+    header p {
+      font-size: 1rem;
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
 
-        .back-button {
-            display: inline-block;
-            margin-bottom: 16px;
-            padding: 10px 16px;
-            background-color: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+    .toolbar {
+      margin-bottom: 12px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 16px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+    }
 
-        form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
+    form {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+    }
 
-        fieldset {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 18px;
-        }
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 0 0 16px;
+    }
+    legend {
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0 8px;
+    }
 
-        legend {
-            padding: 0 8px;
-            font-weight: bold;
-            color: var(--primary);
-        }
+    /* 响应式两列网格 */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
 
-        label {
-            display: block;
-            margin: 10px 0 6px;
-            font-weight: 600;
-        }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 1rem;
-        }
+    label {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      font-size: 1rem;
+      padding: 10px 12px;
+      border: 1px solid #c9ced6;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fff;
+    }
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(10, 102, 255, 0.15);
+    }
 
-        .actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 8px;
-        }
+    .radios {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
 
-        .btn {
-            padding: 10px 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary { background: var(--accent); color: #fff; }
-        .btn-secondary { background: #e9ecef; color: #000; }
-
-        .note {
-            font-size: 0.95rem;
-            color: var(--muted);
-            margin-top: 12px;
-        }
-
-        @media (max-width: 640px) {
-            .grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        index.html← Back to Home</button>
-
-        <header>
-            <h1>Join the Japan Travel Club</h1>
-            <p>Fill in your details and we’ll get in touch soon. よろしくお願いします！</p>
-        </header>
-
-        <form id="joinForm">
-            <fieldset>
-                <legend>Personal Information</legend>
-                <div class="grid">
-                    <div>
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required placeholder="e.g., Sze Ming Cheung">
-                    </div>
-                    <div>
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="you@example.com">
-                    </div>
-                </div>
-                <div class="grid">
-                    <div>
-                        <label for="phone">Phone (optional)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+852 1234 5678">
-                    </div>
-                    <div>
-                        <label for="experience">Have you visited Japan before?</label>
-                        <select id="experience" name="experience" required>
-                            <option value="" disabled selected>Select one</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <legend>Travel Preferences</legend>
-                <label for="destination">Favorite Destination in Japan</label>
-                <input type="text" id="destination" name="destination" placeholder="Kyoto, Hokkaido, Okinawa, …">
-
-                <label for="interest">Top Interests</label>
-                <input type="text" id="interest" name="interest" placeholder="Food, history, anime, nature, …">
-
-                <label for="reason">Why do you want to join?</label>
-                <textarea id="reason" name="reason" rows="4" placeholder="Tell us what you’re excited about!"></textarea>
-            </fieldset>
-
-            <div class="actions">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="reset" class="btn btn-secondary">Reset</button>
-            </div>
-
-            <p class="note">By submitting, you agree to be contacted about club activities. We respect your privacy.</p>
-        </form>
+  <div class="container">
+    <div class="toolbar">
+      index.html返回首页</button>
     </div>
 
-    <script>
-        // Simple confirmation on submit
-        document.getElementById('joinForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Thanks for joining the Japan Travel Club! We’ll contact you soon.');
-            // TODO: Replace the alert with actual submission logic (fetch/XHR) if you have a backend.
-            this.reset();
-        });
-    </script>
+    <header>
+      <h1>加入我们 - 日本旅游俱乐部</h1>
+      <p>加入俱乐部，获取最新旅游资讯、独家优惠与特别活动通知。</p>
+    </header>
+
+    #
+      <fieldset>
+        <legend>基本信息</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="email">邮箱</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@example.com"
+              title="请输入有效邮箱地址"
+              <!-- 如需更严格校验可添加 pattern -->
+            />
+            <span class="note">我们仅用于通知俱乐部活动与优惠。</span>
+          </div>
+
+          <div class="field">
+            <label for="phone">电话号码</label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              required
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="+81 90-1234-5678"
+              title="可输入国家区号、空格、短横、括号"
+              pattern="^\+?[0-9()\-\s]{7,20}$"
+            />
+          </div>
+
+          <div class="field">
+            <label for="name">姓名</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              required
+              placeholder="请输入姓名"
+              title="建议首字母大写（可根据需要移除约束）"
+            />
+          </div>
+
+          <div class="field">
+            <label for="age">年龄</label>
+            <input
+              id="age"
+              type="number"
+              name="age"
+              min="18"
+              required
+              placeholder="18+"
+            />
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label>性别</label>
+            <div class="radios" role="radiogroup" aria-label="性别">
+              <label><input type="radio" name="gender" value="男" required> 男</label>
+              <label><input type="radio" name="gender" value="女"> 女</label>
+              <label><input type="radio" name="gender" value="保密"> 保密</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>您的问题</legend>
+        <div class="field">
+          <label for="userquestion">留言</label>
+          <textarea id="userquestion" name="userquestion" rows="4" placeholder="例如：请推荐东京5日行程，预算约¥XXXX…"></textarea>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <input type="submit" class="btn primary" value="提交" />
+        <button type="reset" class="btn">重置</button>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
